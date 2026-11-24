@@ -1,0 +1,64 @@
+{
+  "status": "completed",
+  "generated_at": "2026-11-24T14:17:46.826077+00:00",
+  "sample_count": 40,
+  "metrics": {
+    "rules_only": {
+      "total": 40,
+      "accuracy": 1.0,
+      "false_high_count": 0,
+      "confusion_matrix": {
+        "LOW": {
+          "LOW": 10,
+          "MEDIUM": 0,
+          "HIGH": 0,
+          "INSUFFICIENT_EVIDENCE": 0
+        },
+        "MEDIUM": {
+          "LOW": 0,
+          "MEDIUM": 10,
+          "HIGH": 0,
+          "INSUFFICIENT_EVIDENCE": 0
+        },
+        "HIGH": {
+          "LOW": 0,
+          "MEDIUM": 0,
+          "HIGH": 12,
+          "INSUFFICIENT_EVIDENCE": 0
+        },
+        "INSUFFICIENT_EVIDENCE": {
+          "LOW": 0,
+          "MEDIUM": 0,
+          "HIGH": 0,
+          "INSUFFICIENT_EVIDENCE": 8
+        }
+      },
+      "per_class": {
+        "LOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 10
+        },
+        "MEDIUM": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 10
+        },
+        "HIGH": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 12
+        },
+        "INSUFFICIENT_EVIDENCE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        }
+      }
+    }
+  }
+}

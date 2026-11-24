@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "domain": "scholarships",
+    "original_purpose": "Verify scholarship eligibility and communicate application updates.",
+    "evidence_text": "Dear applicant, your documents have been verified and your application status is now Under Review. We will email you regarding the interview scheduled next week.",
+    "expected_risk": "LOW",
+    "note": "Routine administrative update; verified documents and scheduled interview are benign status communications."
+  },
+  {
+    "id": 2,
+    "domain": "job_portals",
+    "original_purpose": "Use my resume and contact details to evaluate my job application.",
+    "evidence_text": "We are pleased to invite you for a preliminary interview with our hiring committee next Tuesday. Please reply to confirm your availability.",
+    "expected_risk": "LOW",
+    "note": "Interview scheduling email directly consistent with evaluating job application."
+  },
+  {
+    "id": 3,
+    "domain": "job_portals",
+    "original_purpose": "Use my resume and contact details to evaluate my job application.",
+    "evidence_text": "We partner with accredited universities to verify educational credentials for shortlisted applicants. Your application status remains under active evaluation by the hiring committee.",
+    "expected_risk": "LOW",
+    "note": "Mentions partnering with universities for accreditation verification without data sharing to ad partners."
+  },
+  {
+    "id": 4,
+    "domain": "banking",
+    "original_purpose": "Manage savings account and execute requested financial transactions.",
+    "evidence_text": "Security Alert: A sign-in attempt was detected from a new browser. If this was you, please enter the one-time password OTP code 482910 to verify your identity.",
+    "expected_risk": "LOW",
+    "note": "Benign security verification and OTP notification."
+  },
+  {
+    "id": 5,
+    "domain": "e_commerce",
+    "original_purpose": "Process product orders and deliver purchased merchandise to customer address.",
+    "evidence_text": "Thank you for your order #49281. Your payment of $42.50 was received and your package is being prepared for shipment via standard delivery. Here is your official receipt.",
+    "expected_risk": "LOW",
+    "note": "Routine order fulfillment, receipt, and delivery notification."
+  },
+  {
+    "id": 6,
+    "domain": "government",
+    "original_purpose": "Process motor vehicle license renewals and issue registration documents.",
+    "evidence_text": "Your vehicle registration renewal application has been received and verified by the transport department. Your official registration receipt and confirmation will be delivered by postal mail.",
+    "expected_risk": "LOW",
+    "note": "Government administrative status confirmation and document issuance."
+  },
+  {
+    "id": 7,
+    "domain": "edtech",
+    "original_purpose": "Provide online learning services and track course progress.",
+    "evidence_text": "Welcome to Python Foundations. Your course enrollment has been confirmed, and your learning activity will be recorded to display your progress on your personal dashboard.",
+    "expected_risk": "LOW",
+    "note": "Expected usage fully aligned with original purpose of tracking course progress."
+  },
+  {
+    "id": 8,
+    "domain": "e_commerce",
+    "original_purpose": "Deliver online purchases and send promotional marketing offers and weekly discount newsletters.",
+    "evidence_text": "Check out our latest seasonal offers and special promotional marketing campaign with discounts up to forty percent off selected household electronics this weekend only.",
+    "expected_risk": "LOW",
+    "note": "Promotional marketing is covered because it was explicitly agreed in the original purpose baseline."
+  },
+  {
+    "id": 9,
+    "domain": "banking",
+    "original_purpose": "Manage savings account and execute requested financial transactions.",
+    "evidence_text": "Your monthly banking statement for your checking account is now ready to view. Please log in to your secure mobile banking dashboard to download the confirmation statement.",
+    "expected_risk": "LOW",
+    "note": "Routine account statement notification aligned with original banking services."
+  },
+  {
+    "id": 10,
+    "domain": "edtech",
+    "original_purpose": "Provide online learning services and track course progress.",
+    "evidence_text": "We received an automated request to reset your password for your student learning portal account. Please follow the instructions to securely reset your password.",
+    "expected_risk": "LOW",
+    "note": "Routine account security and password reset notice."
+  },
+  {
+    "id": 11,
+    "domain": "edtech",
+    "original_purpose": "Provide online learning services and track course progress.",
+    "evidence_text": "Your learning activity may be shared with selected third parties for additional purposes including external academic research and platform enhancement studies.",
+    "expected_risk": "MEDIUM",
+    "note": "Vague purpose and selected third parties without precise definitions."
+  },
+  {
+    "id": 12,
+    "domain": "job_portals",
+    "original_purpose": "Use my resume and contact details to evaluate my job application.",
+    "evidence_text": "To improve our services, we may use your profile information for analytics and share insights with trusted partners to enhance platform performance.",
+    "expected_risk": "MEDIUM",
+    "note": "Analytics and sharing insights with trusted partners for service improvement."
+  },
+  {
+    "id": 13,
+    "domain": "e_commerce",
+    "original_purpose": "Process product orders and deliver purchased merchandise to customer address.",
+    "evidence_text": "We are updating our data retention policy. Customer account records and order interaction histories will now be retained indefinitely in our secondary archival databases.",
+    "expected_risk": "MEDIUM",
+    "note": "Indefinite data retention change introducing auxiliary archival storage."
+  },
+  {
+    "id": 14,
+    "domain": "scholarships",
+    "original_purpose": "Verify scholarship eligibility and communicate application updates.",
+    "evidence_text": "If you choose to receive updates, we may optionally send promotional communication and special deals regarding educational loans and partner foundation programs.",
+    "expected_risk": "MEDIUM",
+    "note": "Marketing detected but explicitly framed as optional opt-in."
+  },
+  {
+    "id": 15,
+    "domain": "banking",
+    "original_purpose": "Manage savings account and execute requested financial transactions.",
+    "evidence_text": "We analyze anonymized transaction patterns to improve our services and support ongoing internal product development across our retail banking divisions.",
+    "expected_risk": "MEDIUM",
+    "note": "Internal analytics and product development beyond core account management."
+  },
+  {
+    "id": 16,
+    "domain": "government",
+    "original_purpose": "Process motor vehicle license renewals and issue registration documents.",
+    "evidence_text": "Citizen contact records may be disclosed to trusted technical contractors assisting municipal departments in statistical analysis and infrastructure optimization.",
+    "expected_risk": "MEDIUM",
+    "note": "Vague disclosure to contractors for statistical purposes."
+  },
+  {
+    "id": 17,
+    "domain": "job_portals",
+    "original_purpose": "Use my resume and contact details to evaluate my job application.",
+    "evidence_text": "Aggregated candidate trends and applicant qualifications may be shared with selected partners to improve our recruitment platform algorithms.",
+    "expected_risk": "MEDIUM",
+    "note": "Selected partners and improving services without direct commercial marketing."
+  },
+  {
+    "id": 18,
+    "domain": "e_commerce",
+    "original_purpose": "Process product orders and deliver purchased merchandise to customer address.",
+    "evidence_text": "You may opt-in to receive promotional partner offers and brand collaborations by adjusting the notification preferences within your customer account settings.",
+    "expected_risk": "MEDIUM",
+    "note": "Optional opt-in partner promotions."
+  },
+  {
+    "id": 19,
+    "domain": "edtech",
+    "original_purpose": "Provide online learning services and track course progress.",
+    "evidence_text": "We conduct academic analytics and research purposes to study student engagement and improve our services across multiple international educational programs.",
+    "expected_risk": "MEDIUM",
+    "note": "Broad analytics and research purposes."
+  },
+  {
+    "id": 20,
+    "domain": "banking",
+    "original_purpose": "Manage savings account and execute requested financial transactions.",
+    "evidence_text": "Customer account data will be subject to an extended retention policy to retain customer interaction histories across corporate holding affiliates.",
+    "expected_risk": "MEDIUM",
+    "note": "Retention policy change across corporate affiliates."
+  },
+  {
+    "id": 21,
+    "domain": "scholarships",
+    "original_purpose": "Verify scholarship eligibility and communicate application updates.",
+    "evidence_text": "We may share your registered email address with selected advertising partners for promotional communication and exclusive partner offers.",
+    "expected_risk": "HIGH",
+    "note": "Direct advertising partner sharing and promotional marketing outside scholarship baseline."
+  },
+  {
+    "id": 22,
+    "domain": "job_portals",
+    "original_purpose": "Use my resume and contact details to evaluate my job application.",
+    "evidence_text": "Candidate contact details will be used to send promotional offers about partner courses and products directly to your inbox.",
+    "expected_risk": "HIGH",
+    "note": "Commercial partner course marketing without baseline consent."
+  },
+  {
+    "id": 23,
+    "domain": "e_commerce",
+    "original_purpose": "Process product orders and deliver purchased merchandise to customer address.",
+    "evidence_text": "We reserve the right to sell customer demographic profiles to commercial data brokers and monetization partners for external advertising purposes.",
+    "expected_risk": "HIGH",
+    "note": "Explicit sale of data to data brokers."
+  },
+  {
+    "id": 24,
+    "domain": "edtech",
+    "original_purpose": "Provide online learning services and track course progress.",
+    "evidence_text": "We monitor user habits and use behavioural tracking to build user profiles for targeted ads and personalized advertising across partner networks.",
+    "expected_risk": "HIGH",
+    "note": "Behavioral tracking, user profiling, and personalized advertising."
+  },
+  {
+    "id": 25,
+    "domain": "banking",
+    "original_purpose": "Manage savings account and execute requested financial transactions.",
+    "evidence_text": "We may disclose customer contact details to third-party commercial sponsors and external marketing partners for promotional campaigns.",
+    "expected_risk": "HIGH",
+    "note": "Third-party sharing with commercial sponsors for marketing campaigns."
+  },
+  {
+    "id": 26,
+    "domain": "government",
+    "original_purpose": "Process motor vehicle license renewals and issue registration documents.",
+    "evidence_text": "Driver vehicle registration records will be monetized through data brokers and shared with private automotive advertisers for promotional campaigns.",
+    "expected_risk": "HIGH",
+    "note": "Monetization through data brokers and sharing with automotive advertisers."
+  },
+  {
+    "id": 27,
+    "domain": "job_portals",
+    "original_purpose": "Use my resume and contact details to evaluate my job application.",
+    "evidence_text": "Candidate resumes and email addresses will be disclosed to third parties and advertising agencies for commercial promotional campaigns.",
+    "expected_risk": "HIGH",
+    "note": "Disclosing resumes to third parties and advertising agencies."
+  },
+  {
+    "id": 28,
+    "domain": "e_commerce",
+    "original_purpose": "Process product orders and deliver purchased merchandise to customer address.",
+    "evidence_text": "Your shopping patterns and search queries are utilized for profiling and personalized ads delivered through third-party ad networks.",
+    "expected_risk": "HIGH",
+    "note": "Profiling and personalized ads on third-party ad networks."
+  },
+  {
+    "id": 29,
+    "domain": "scholarships",
+    "original_purpose": "Verify scholarship eligibility and communicate application updates.",
+    "evidence_text": "Applicant contact details and family income data will be shared with corporate sponsors and advertisers for promotional marketing initiatives.",
+    "expected_risk": "HIGH",
+    "note": "Sharing sensitive income and contact data with corporate sponsors/advertisers."
+  },
+  {
+    "id": 30,
+    "domain": "edtech",
+    "original_purpose": "Provide online learning services and track course progress.",
+    "evidence_text": "We may sell student contact records and study patterns to commercial education brokers and third-party advertising partners.",
+    "expected_risk": "HIGH",
+    "note": "Sale of data to commercial education brokers."
+  },
+  {
+    "id": 31,
+    "domain": "banking",
+    "original_purpose": "Manage savings account and execute requested financial transactions.",
+    "evidence_text": "We share your personal information with affiliates and advertising vendors to deliver commercial promotions and special deals across affiliated platforms.",
+    "expected_risk": "HIGH",
+    "note": "Sharing with affiliates and advertising vendors for commercial promotions."
+  },
+  {
+    "id": 32,
+    "domain": "job_portals",
+    "original_purpose": "Use my resume and contact details to evaluate my job application.",
+    "evidence_text": "User profile information is subjected to behavioural tracking and profiling to display targeted ads on behalf of third-party commercial partners.",
+    "expected_risk": "HIGH",
+    "note": "Behavioral tracking and profiling for targeted ads."
+  },
+  {
+    "id": 33,
+    "domain": "edtech",
+    "original_purpose": "Provide online learning services and track course progress.",
+    "evidence_text": "Hello, please check the app.",
+    "expected_risk": "INSUFFICIENT_EVIDENCE",
+    "note": "Very short text (5 words)."
+  },
+  {
+    "id": 34,
+    "domain": "banking",
+    "original_purpose": "Manage savings account and execute requested financial transactions.",
+    "evidence_text": "Your temporary access code is 884102.",
+    "expected_risk": "INSUFFICIENT_EVIDENCE",
+    "note": "Short snippet under 15 words."
+  },
+  {
+    "id": 35,
+    "domain": "e_commerce",
+    "original_purpose": "Process product orders and deliver purchased merchandise to customer address.",
+    "evidence_text": "Happy holidays from our entire customer support team! We wish you and your family a wonderful new year ahead filled with joy and prosperity.",
+    "expected_risk": "INSUFFICIENT_EVIDENCE",
+    "note": "Holiday greeting with no data processing disclosures or privacy purposes."
+  },
+  {
+    "id": 36,
+    "domain": "job_portals",
+    "original_purpose": "Use my resume and contact details to evaluate my job application.",
+    "evidence_text": "Thanks for contacting our support desk. A support ticket has been created for your inquiry.",
+    "expected_risk": "INSUFFICIENT_EVIDENCE",
+    "note": "Support acknowledgment under 15 words."
+  },
+  {
+    "id": 37,
+    "domain": "scholarships",
+    "original_purpose": "Verify scholarship eligibility and communicate application updates.",
+    "evidence_text": "Reminder: The portal maintenance window begins tonight at midnight.",
+    "expected_risk": "INSUFFICIENT_EVIDENCE",
+    "note": "Short operational notice under 15 words."
+  },
+  {
+    "id": 38,
+    "domain": "government",
+    "original_purpose": "Process motor vehicle license renewals and issue registration documents.",
+    "evidence_text": "Thank you for visiting the state portal. Have a pleasant day ahead!",
+    "expected_risk": "INSUFFICIENT_EVIDENCE",
+    "note": "Short pleasantry under 15 words."
+  },
+  {
+    "id": 39,
+    "domain": "banking",
+    "original_purpose": "Manage savings account and execute requested financial transactions.",
+    "evidence_text": "Please see our CEO message regarding community sustainability initiatives and green energy investments.",
+    "expected_risk": "INSUFFICIENT_EVIDENCE",
+    "note": "Corporate announcement with no data use purposes under 15 words."
+  },
+  {
+    "id": 40,
+    "domain": "edtech",
+    "original_purpose": "Provide online learning services and track course progress.",
+    "evidence_text": "Notice: Server maintenance completed successfully. All platform course services are currently operational.",
+    "expected_risk": "INSUFFICIENT_EVIDENCE",
+    "note": "Brief system status notice with no data processing purpose disclosures."
+  }
+]

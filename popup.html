@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConsentDrift</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <span>ConsentDrift</span>
+    </div>
+    <div class="header-right">
+      <div id="user-pill" style="display: none;" class="user-pill">
+        <span id="user-email-text" class="user-email"></span>
+        <button id="logout-btn" class="logout-btn" title="Sign Out">Log Out</button>
+      </div>
+      <div class="status-badge" id="status-badge">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status-text">Connecting...</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="offline-banner" class="banner banner-warning" style="display: none; margin: 10px 14px 0 14px;">
+    Backend unreachable at <strong>http://localhost:8000</strong>. Please start the server.
+  </div>
+
+  <!-- VIEW 1: LOGIN (Shown when unauthenticated) -->
+  <div id="login-view" class="content-pane active" style="display: none;">
+    <div class="login-card">
+      <div class="login-header">
+        <h3>Sign In to ConsentDrift</h3>
+        <p>Log in with your ConsentDrift account to analyze evidence and manage baselines.</p>
+      </div>
+
+      <div id="login-error" class="banner banner-danger" style="display: none;"></div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="you@domain.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="login-submit-btn">
+          <span>Sign In</span>
+        </button>
+
+        <button type="button" class="btn btn-outline" id="demo-login-fill-btn" style="margin-top: 6px;">
+          Use Demo Account (demo@consentdrift.app)
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- VIEW 2: AUTHENTICATED WORKSPACE (Shown when logged in) -->
+  <div id="auth-content" style="display: none;">
+    <div class="tabs">
+      <button class="tab-btn active" id="tab-evidence-btn">Analyse Evidence</button>
+      <button class="tab-btn" id="tab-baseline-btn">Save Baseline</button>
+    </div>
+
+    <!-- PANE 1: EVIDENCE ANALYSIS -->
+    <div class="content-pane active" id="pane-evidence">
+      <div id="pending-alert" class="banner banner-info" style="display: none;">
+        <span>Loaded highlighted text from browser selection.</span>
+        <button id="clear-pending-btn" style="background:none;border:none;color:#1e40af;cursor:pointer;font-weight:600;font-size:11px;">Clear</button>
+      </div>
+
+      <form id="evidence-form">
+        <div class="form-group">
+          <label for="consent-select">Baseline Consent</label>
+          <select id="consent-select" required>
+            <option value="">Loading baselines...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="evidence-type">Evidence Type</label>
+          <select id="evidence-type">
+            <option value="email">Email</option>
+            <option value="policy">Policy Update</option>
+            <option value="notification">In-App Notification</option>
+            <option value="sms">SMS</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="evidence-title">Title</label>
+          <input type="text" id="evidence-title" placeholder="e.g. Partner Marketing Notification" required />
+        </div>
+
+        <div class="form-group">
+          <label for="evidence-content">Evidence Text (disclosure, email body, snippet)</label>
+          <textarea id="evidence-content" rows="4" placeholder="Paste privacy email or policy text..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="analyse-btn">
+          <span>Analyse Purpose Drift</span>
+        </button>
+      </form>
+
+      <div id="analysis-result" style="display: none;">
+        <div class="result-card">
+          <div class="result-header">
+            <span id="result-risk-badge" class="badge-risk">LOW</span>
+            <span id="result-mode-text" style="font-size: 11px; color: var(--text-muted);">rules-only</span>
+          </div>
+          <div class="result-score" id="result-score-container" style="display: none; margin: 8px 0; font-size: 12px; font-weight: 600; color: #4338ca;">
+            Drift Score: <span id="result-score-val">0</span>/100
+          </div>
+          <div class="result-explanation" id="result-explanation"></div>
+          <div class="result-meta">
+            <span id="result-quotes-count">0 quotes verified</span>
+            <span id="result-signals-count">0 signals</span>
+          </div>
+          <button type="button" class="btn btn-primary" id="open-analysis-btn">
+            Open Full Analysis in App
+          </button>
+          <button type="button" class="btn btn-outline" id="reset-evidence-btn">
+            Analyse Another
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 2: SAVE BASELINE -->
+    <div class="content-pane" id="pane-baseline">
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+        Capture privacy terms from the active browser tab to create a new consent baseline.
+      </p>
+
+      <form id="baseline-form">
+        <div class="form-group">
+          <label for="baseline-org">Organisation</label>
+          <input type="text" id="baseline-org" placeholder="e.g. Acme Corp" required />
+        </div>
+
+        <div class="form-group">
+          <label for="baseline-service">Service Name</label>
+          <input type="text" id="baseline-service" placeholder="e.g. Scholarship Portal" required />
+        </div>
+
+        <div class="form-group">
+          <label for="baseline-purpose">Baseline Purpose / Terms</label>
+          <textarea id="baseline-purpose" rows="4" placeholder="Extracting active tab content..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="save-baseline-btn">
+          Save Consent Baseline
+        </button>
+      </form>
+      <div id="baseline-success" class="banner banner-info" style="display: none; margin-top: 10px;">
+        Baseline saved successfully! It is now selectable in the evidence tab.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="disclaimer-text">
+      Potential discrepancies based on submitted evidence. Not legal advice.
+    </div>
+    <div>
+      <a href="http://localhost:5173" target="_blank" id="open-app-link">Open ConsentDrift Dashboard &rarr;</a>
+    </div>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
